@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  background: url("https://images.unsplash.com/photo-1626110205115-77546ef76a79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+  background-size: cover;
+}
+
+.container h1 {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: orange;
+  width: 200px;
+}
+
+.container .btn:hover {
+  filter: brightness(0.8);
+}
+
+.active.container {
+  filter: blur(5px) brightness(0.7);
+}
+
+.popup-container {
+  position: fixed;
+  left: 50%;
+  width: 400px;
+  height: 200px;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: url("https://media.istockphoto.com/id/1206829954/nl/foto/foto-van-geconcentreerde-geconcentreerde-serieuze-programmeur-die-door-code-van-kunstmatige.webp?s=612x612&w=is&k=20&c=c67wCcidXjkKjyHEn1YDMR7O3HSLCeNtihQXQ1D8Z4U=");
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup-container h4 {
+  font-size: 30px;
+  color: white;
+  margin: 10px 0;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.popup-container label {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.popup-container .popup-btn {
+  background-color: orangered;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid;
+}
+
+.popup-container input {
+  border: 2px solid;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.popup-container input::placeholder {
+  color: lightgray;
+}
+
+.close-icon {
+  position: absolute;
+  color: white;
+  right: 20px;
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  color: orangered;
+}
+
+.active.popup-container {
+  visibility: hidden;
+}

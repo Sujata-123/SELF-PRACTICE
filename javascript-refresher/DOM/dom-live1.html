@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM LIVE</title>
+    <style>
+      #anchor {
+        text-decoration: none;
+        color: red;
+        background-color: teal;
+      }
+      #h4Tag {
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Onclick event occur when user click on an element</h1>
+    <button onclick="myFunction()">Click Me</button>
+    <!-- what is textContent whatever I write inbetween the div, so if you want to excess that how you will excess. -->
+    <div id="container">
+      <p>I am div1</p>
+    </div>
+    <button onclick="onButtonClickChangeText()">Click Me 2!</button>
+    <div id="sujata">I am div2</div>
+
+    <input type="text" id="input" placeholder="Enter name" value="" />
+    <select id="select">
+      <option>Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <button onclick="buttonClickGetSomeValueOnConsole()">Click Me 3!</button>
+
+    <!-- styling using javascript -->
+    <p id="style-para1">I am P!</p>
+    <p class="style-para">I am para2</p>
+    <p class="style-para">I am para3</p>
+
+    <!-- query selector
+    1. querySelector=>querySelector return only fist Element
+    2. querySelectorAll=> we can use all the combinators in querySelectorAll
+    -->
+
+    <h5>Heading 1</h5>
+    <h5>Heading 2</h5>
+    <p>Paragraph</p>
+    <div>
+      <p>P1 Inside div</p>
+      <p>P2 inside div</p>
+      <p>P3 inside div</p>
+      <p>P4 inside div</p>
+    </div>
+
+    <!-- <a id="set-attribute">W3SCHOOL</a> -->
+    <a>W3SCHOOL</a>
+
+    <h4>I am h4</h4>
+
+    <img alt="image" />
+  </body>
+</html>
+<script>
+  // click event
+  // 1. onclick="functionName()"
+  var count = 0;
+  function myFunction() {
+    count++;
+    console.log("no of clicks", count);
+  }
+  // .textContent will give whatever text written, but .innerHTML will give whatever text present alone with html
+  console.log(document.getElementById("container").textContent);
+  console.log(document.getElementById("container").innerHTML);
+  console.log(document.getElementById("sujata").innerHTML);
+
+  function onButtonClickChangeText() {
+    const newContent = (document.getElementById("container").innerHTML =
+      "<h1>I am new Div<h1>");
+    console.log(newContent);
+  }
+
+  console.log(document.getElementById("input").value);
+  console.log(document.getElementById("input").type);
+
+  function buttonClickGetSomeValueOnConsole() {
+    const inputText = document.getElementById("input").value;
+
+    const selectChoose = document.getElementById("select").value;
+    console.log(selectChoose);
+    console.log(inputText);
+
+    document.getElementById("input").value = "";
+    document.getElementById("select").value = "";
+  }
+
+  // styling using javascript
+
+  document.getElementById("style-para1").style.backgroundColor = "teal";
+  document.getElementById("style-para1").style.color = "red";
+  document.getElementById("style-para1").style.fontSize = "30px";
+  document.getElementById("style-para1").style.textAlign = "center";
+
+  var x1 = document.getElementsByClassName("style-para");
+  // console.log(x1);
+  // console.log(x1.length);
+  // // want to excess only second para
+  // console.log(x1[0]);
+
+  for (var i = 0; i < x1.length; i++) {
+    console.log(x1[i]);
+  }
+
+  // query Selector
+  var querySelector = document.querySelector("h5+p");
+  console.log("querySelector", querySelector);
+  var querySelectorAll = document.querySelectorAll("h5");
+  console.log("querySelectorAll", querySelectorAll);
+
+  var combinatorExamp = document.querySelectorAll("div>p");
+  console.log(combinatorExamp);
+
+  // Attributes
+  // 1. setAttribute(attributeName,attributeValue)
+  // setAttribute for anchor tag=>  href is attribute, target is also attribute => setAttribute('href',"w3school.com");
+  // setAttribute of targe=>  setAttribute("target","_blank")
+
+  // if writing like this it will written array of element and below code will throw an error.
+  // document.getElementsByTagName("a").setAttribute("href", "https://www.w3schools.com/");
+
+  var dataSetAttribute = document.getElementsByTagName("a");
+  dataSetAttribute[0].setAttribute("href", "https://www.w3schools.com/");
+  dataSetAttribute[0].setAttribute("target", "_blank");
+  dataSetAttribute[0].setAttribute("id", "anchor");
+  // document;
+  // .getElementById("set-attribute")
+  // .setAttribute("href", "https://www.w3schools.com/");
+
+  var x = document.querySelector("h4").setAttribute("id", "h4Tag");
+
+  document
+    .querySelector("img")
+    .setAttribute(
+      "src",
+      "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
+    );
+  // document.querySelector("a").removeAttribute("target");
+  console.log(document.querySelector("a").getAttribute("href"));
+  console.log(document.querySelector("a").getAttribute("target"));
+</script>
+
+<!-- nodes
+1. entire document is an object
+2. why objects because browsers cannot understand document that's why it converts entire document into object
+3. when writing document, we will get entire document
+4. inside document if you want to excess anything you have to write document.body=>can excess body, why writing dot because entire document
+is an object so if you want to excess anything from that object you have to write dot notation.
+5. document object
+ 1. document.URL
+ 2. document.title
+ 3. document.domain
+ 4. document.all
+ 5. document.forms
+ 6. document.links
+ 7. document.images
+-->
+
+<!-- combinators =>all combinators we can use in query selector
+1. space => decendant selector=>it select all decendants
+2. > =>=> child selector =>
+3. + => adjacent sibling selector
+4. ~ => all siblings
+-->

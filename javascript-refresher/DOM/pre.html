@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- onclick is attribute -->
+    <button onclick="hello()">Click Me</button>
+    <button onclick="function1()">Alert Button</button>
+
+    <h1 id="demo">Javascript</h1>
+    <button onclick="changeText()">Change to Javascript</button>
+    <button onclick="changeOriginal()">Change to Sujata</button>
+
+    <!-- query selector all -->
+    <div>First Div</div>
+    <div>Second Div</div>
+    <p>First Para</p>
+    <p>Second Para</p>
+    <button onclick="changeContext()">Change Dom</button>
+    <br />
+    <br />
+    <!-- input box -->
+
+    <input type="text" id="myInput" placeholder="Enter Some text" />
+    <br />
+    <br />
+    <button onclick="showInput()">Alert Input</button>
+  </body>
+</html>
+<script>
+  // events are any actions done by user on webpage
+
+  function hello() {
+    console.log("hello sujata");
+  }
+
+  function function1() {
+    alert("I am an alert box!");
+  }
+
+  function changeText() {
+    console.log(document.getElementById("demo").innerHTML);
+    // document.getElementById("demo").innerHTML="change to javascript";
+    document.getElementById("demo").innerHTML = "<h1>Change to Javascript</h1>";
+  }
+
+  function changeOriginal() {
+    // document.getElementById("demo").textContent = "Change to Sujata";
+    document.getElementById("demo").textContent = "<h1>Change to Sujata<h1>";
+  }
+
+  //   query selector all
+
+  function changeContext() {
+    var divs = document.querySelectorAll("div");
+    for (i = 0; i < divs.length; i++) {
+      var div = divs[i];
+      div.innerHTML = "DIV" + (i + 1);
+    }
+
+    var paras = document.querySelectorAll("p");
+    var secondPara = paras[1];
+    secondPara.innerHTML = "Sujata";
+  }
+
+  //   if you want to get the value of any input element we have to write input
+
+  function showInput() {
+    alert(document.getElementById("myInput").value);
+  }
+</script>
+
+<!-- difference between innerHtml and textContent
+1. innerHtml means if using some html tags there would be affect on text if writing <h1> tag means our text would take h1 tag.
+2. textContent will should text, whatever text we are writing if using any html tags that would visible as it is. 
+-->

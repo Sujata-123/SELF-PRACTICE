@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Events Create Insert Delete</h1>
+    <div id="box"></div>
+    <button id="changeColor">Change Color</button>
+    <button id="removeClick">Remove Click</button>
+  </body>
+</html>
+<!-- Events Create, Insert, Delete -->
+
+<!-- Event Listerners
+1. .addEventListners(event,function)
+2. .removeEventListners(event,function)
+-->
+
+<script>
+  var changeButton = document.getElementById("changeColor");
+  var removeClick = document.getElementById("removeClick");
+  var count = 1;
+  function switchColor() {
+    document.getElementById("box").textContent = count;
+    document.getElementById("box").style.backgroundColor = "red";
+    count++;
+  }
+
+  function stopClick() {
+    changeButton.removeEventListener("click", switchColor);
+  }
+
+  changeButton.addEventListener("click", switchColor);
+  removeClick.removeEventListener("click", stopClick);
+</script>

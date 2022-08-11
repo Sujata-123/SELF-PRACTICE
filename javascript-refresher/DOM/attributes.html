@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* .class1 {
+        font-size: 30px;
+      }
+      .class2 {
+        color: blue;
+      }
+      .class3 {
+        background: red;
+      } */
+
+      /* .class1 {
+        color: red;
+        font-size: 32px;
+      }
+
+      #d1 {
+        background-color: blue;
+        color: white;
+        padding: 10px;
+      } */
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- attributes
+    attributes are nothing key value pairs
+   1. .setAttribute(key,value)
+   2. .getAttribute(key)
+   3. .removeAttribute(key)
+    -->
+    <h1>Hello Attributes</h1>
+    <!--  1. .setAttribute(key,value) -->
+    <!-- <div>
+      <a href="http://www.google.com" target="_blank">Google</a>
+    </div>
+    <div>
+      <img
+        src="https://campk12.com/_next/image?url=https%3A%2F%2Fstatic.campk12.com%2Fassets%2F5OTX50FFSI_cr-coding.webp.webp&w=256&q=100"
+      />
+      <hr />
+      <button onclick="changeLink()">Change Link</button>
+      <button onclick="changeImage()">Change Image</button>
+    </div>
+    <br />
+    <br /> -->
+    <!-- 2. .getAttribute(key) -->
+
+    <!-- <div id="div" class="class1 class2">DIV</div>
+    <br />
+    <button onclick="addClass()">ADD CLASS</button> -->
+
+    <!-- .removeAttribute(key) -->
+    <!-- 
+    <div>First Div</div>
+    <div>Second Div</div>
+    <p>First Para</p>
+    <p>Second Para</p>
+    <button onclick="setStyle()">Set Style</button>
+    <button onclick="removeStyle()">Remove Style</button> -->
+
+    <!-- style -->
+    <div>First Div</div>
+    <div>Second Div</div>
+    <p>First Para</p>
+    <p>Second Para</p>
+    <button onclick="setDiv()">Set Div</button>
+    <button onclick="setPara()">Set Para</button>
+  </body>
+</html>
+<script>
+  //   function changeLink() {
+  //     var link = document.querySelector("a");
+  //     link.setAttribute("href", "https://www.w3schools.com/");
+  //     link.textContent = "W3School";
+  //   }
+
+  //   function changeImage() {
+  //     var image = document.querySelector("img");
+  //     image.setAttribute(
+  //       "src",
+  //       "https://campk12.com/_next/image?url=https%3A%2F%2Fstatic.campk12.com%2Fassets%2FQ6NJ42O6F3_cr-english.webp.webp&w=256&q=100"
+  //     );
+  //     image.textContent = "English Image";
+  //   }
+
+  //      2. .getAttribute(key)
+
+  //   function addClass() {
+  //     var div = document.getElementById("div");
+  //     var cname = div.getAttribute("class");
+  //     cname += "class3";
+  //     console.log(cname);
+  //     div.setAttribute("class", "class3");
+  //   }
+
+  //   .removeAttribute(key)
+
+  //   function setStyle() {
+  //     var firstDiv = document.querySelector("div");
+  //     firstDiv.setAttribute("class", "class1");
+  //     var firstP = document.querySelector("p");
+  //     firstDiv.setAttribute("id", "id1");
+  //   }
+
+  //   function removeStyle() {
+  //     var firstDiv = document.querySelector("div");
+  //     firstDiv.removeAttribute("class");
+  //     var firstP = document.querySelector("p");
+  //     firstDiv.removeAttribute("id");
+  //   }
+
+  // style
+
+  function setDiv() {
+    var firstDiv = document.querySelector("div");
+    firstDiv.style.backgroundColor = "red";
+    firstDiv.style.color = "white";
+    firstDiv.style.padding = "10px";
+  }
+
+  function setPara() {
+    var firstP = document.querySelector("p");
+    firstP.style.border = "1px solid black";
+    firstP.style.marginBottom = "50px";
+    firstP.style.fontSize = "40px";
+  }
+</script>
+
+<!-- document object
+1. document.url
+2. document.title
+3. document.domain
+4. document.doctype
+5. document.all
+6. document.forms
+7. document.links
+8. document.images
+
+-->
