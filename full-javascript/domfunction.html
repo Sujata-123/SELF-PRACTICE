@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Functions</title>
+  </head>
+  <body>
+    <div id="sujata"></div>
+    <div class="hello"></div>
+    <div id="thirdDiv"></div>
+  </body>
+  <script>
+    var data = document.getElementById("sujata");
+    data.innerHTML = "<h1>Hello there</h1>";
+
+    var secondDiv = document.querySelector(".hello");
+    secondDiv.textContent = "how are you";
+
+    const thirdDivi = document.getElementById("thirdDiv");
+    thirdDivi.textContent = "click me to see the color change";
+    thirdDivi.addEventListener("click", () => {
+        thirdDivi.style.display="none"
+    });
+  </script>
+</html>

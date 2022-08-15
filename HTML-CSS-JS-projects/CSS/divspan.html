@@ -1,27 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Block Level And Inline</title>
     <style>
-        div{
-            background-color: yellow;
-            height: 100px;
-        }
+      /* div is block level */
+      div {
+        background-color: yellow;
+        height: 100px;
+      }
 
-        span{
-            height: 100px;
-            background-color: blue;
-        }
+      .div-2 {
+        background-color: cyan;
+        width: max-content;
+      }
+
+      .div-3 {
+        background-color: aquamarine;
+        width: min-content;
+      }
+      /* span is inline element */
+      span {
+        height: 100px;
+        background-color: blue;
+      }
+      .span-2{
+        height: 100px;
+        background-color: bisque;
+      }
+
+      .main-div{
+        background-color: azure;
+        height: 100px;
+        border: 1px solid blue;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    .span-inside-block{
+        background-color: blueviolet;
+    }
     </style>
-</head>
-<body>
-    <div>
-    block level
+  </head>
+  <body>
+    <div>block level</div>
+    <div class="div-2">block level</div>
+    <div class="div-3">block level</div>
+    <!-- some inline elements are 
+    span tag, bold, italic etc.
+    -->
+    <span>Inline Elements</span>
+    <span class="span-2">Inline Elements</span>
+
+    <!-- inside block element put block element
+    -->
+    <div class="main-div">
+        <span class="span-inside-block">Inline Element Inside Block Level</span>
     </div>
 
-    <span>Inline Elements</span>
-</body>
+    <!-- block element inside inline element -->
+   <span class="inline-main">
+    <div class="block-element">Hello there</div>
+   </span>
+  </body>
 </html>

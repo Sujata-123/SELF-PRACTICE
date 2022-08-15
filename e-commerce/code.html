@@ -19,12 +19,24 @@
   </body>
 </html>
 <script>
-//   function formSubmit() {
-//     console.log("clicked");
-//   }
+  //   function formSubmit() {
+  //     console.log("clicked");
+  //   }
 
-document.querySelector("button").addEventListener("click",signUp);
-function signUp(){
+  document.querySelector("button").addEventListener("click", signUp);
+  function signUp() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("pass").value;
+    var username = document.getElementById("user").value;
+    var mobile = document.getElementById("mobile").value;
+    console.log(email, password, username, mobile);
 
-}
+    var userCredentials = {
+      emailAddress: email,
+      passwordUser: password,
+      userName: username,
+      mobileUser: mobile,
+    };
+    localStorage.setItem("userData",JSON.stringify(userCredentials))
+  }
 </script>

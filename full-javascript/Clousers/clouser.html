@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clouser</title>
+  </head>
+  <body></body>
+  <script>
+    // A clouser gives you access to an outer function's scope
+    // from an inner function. In Javascript, clousers are created every time a
+    // function is created, at function creation time.
+
+    // javascript functions
+    // whenever javascript sees a .js file it creates a global execution contexts
+    // whenever javascript sees a functions it creates a function execution contexts
+    // clouser is related to functions
+    // for each new functions there would be new execution contexts
+    // what that functions executions context holds whatever the data inside that funtions holds
+    // what happend when this greeting() functions will execute, will that executions contexts
+    // stays there? when the function is executed the functions executions context is destroyed.
+    // function can return anything
+    // first function
+    // function greeting() {
+    //   let n = "raj";
+    //   return n;
+    // }
+    // console.log(greeting());
+
+    // second funtion
+    // clouser is related to functions
+    // nested functions
+    // there has to be a dependency
+    // greeting1 is parent function and returning child functions
+    // and there is depencency between parent and child function,
+    // that dependency is n1 and parents functions knows that
+    // a child functions needs a variable that might destroyed when
+    // its called, so what parents functions do it closes or freezed a
+    // variable that is dependent or doesnt allow them to destroy but only
+    // when there is dependency, clouser will make sure we are able to
+    // excess that.
+    // function greeting1() {
+    //   let n1 = "sujata";  //n is going to garbage
+    //   return function () {
+    //     console.log(n1);
+    //   };
+    // }
+    // let x = greeting1();
+    // x();
+
+    // third functions
+
+    function greeting1() {
+      let n1 = "sujata"; //n is going to garbage
+      return function () {
+        return function () {
+          console.log(n1);
+        };
+      };
+    }
+    let x = greeting1();
+    let y = x();
+    y();
+
+    // debouncing concept
+  </script>
+</html>
