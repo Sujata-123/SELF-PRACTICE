@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Throttling Function</title>
+  </head>
+  <body>
+    <button id="myId">Click Me</button>
+  </body>
+  <script>
+    const throttle = (fn, delay) => {
+      let last = 0;
+      return (...args) => {
+        const now = new Date().getTime();
+        if (now - last < delay) {
+          return;
+        }
+        last = now;
+        return fn(...args);
+      };
+    };
+    document.getElementById("myId").addEventListener(
+      "click",
+      throttle(() => {
+        console.log("you clicked me");
+      }, 5000)
+    );
+  </script>
+</html>
+<!-- debouncing and throttling both avoid unnecessary actions to be fired
+1. in throttle the first click get fired 
+2. in debouncing the last click get fired means after the delay.
+-->
+<!-- Better Coding Academy -->

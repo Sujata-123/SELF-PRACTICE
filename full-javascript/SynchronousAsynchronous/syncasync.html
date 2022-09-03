@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <h2>Synchronous</h2>
+  </body>
+  <script>
+    // Synchronous Execution
+    // console.log(5);
+    // console.log(6);
+    // for (let i = 0; i < 1000; i++) {}
+    // console.log(7);
+    // console.log(8);
+
+    // What is setTimeout()?
+    // setTimeout sets a timer which executes a function or specified piece of code
+    // once the timer expires.
+    // Whenever setTimeout() is encountered in a Js code, Js engine offloads that code to browser.
+    // Now, it’s browser’s responsibility to keep track of counter and remind Js engine that this code should be executed next.
+
+    console.log(1);
+    console.log(2);
+    // test();
+    console.log(3);
+    console.log(4);
+    function test() {
+      // console.log("Hey, I am here");
+      document.body.append("hello, I am here");
+    }
+    // test();
+
+    // first arguments will be function and second argument will be the time.
+    // saying hey, after 3 seconds
+    setTimeout(test, 3000);
+
+    // setInterval
+    // setInterval() method repeatedly calls a function or
+    // executes a code snippet, with a fixed time delay between each call.
+
+    var id = setInterval(test, 5000);
+    clearInterval(id);
+
+    // But how does Js engine keeps track of what to execute next?
+    // Enter Stack and Queue
+
+    // When you call a function in JavaScript all the instructions within that function get loaded into a Stack.
+
+    // Javascript then executes the instructions in each function by popping them from the stack.
+  </script>
+</html>
+
+<!-- Synchronous Execution
+1. One Line at a time
+2. Javascript executes code line by line. Almost every programming language execute 
+code line by line.
+-->
+
+<!-- Asynchronous Execution
+1. Multiple resource Multiple execution at a time.
+2. JS is single threaded, so it cannot do multiple things at a time.
+3. JS can act as asynchronous with the help of friend.
+//Enter Browser API.
+4. Whenever js engine encounters a piece of code that will take long time to 
+execute it hand's over its execution to browser. Browser now takes care of that
+task and when it finished, it pings the js engine that the task is done.
+5. that's how js engine and browser work together to make javascript capabale of
+asynchronous programming.
+
+6. setTimeOut =>setTimeout sets a timer which executes a function 
+or specified piece of code once the timer expires.
+7. Whenever setTimeout() is encountered in a Js code, Js engine offloads 
+that code to browser. 
+8. Now, it’s browser’s responsibility to keep track of counter and remind Js 
+engine that this code should be executed next.
+(function(){
+ setTimeout(()=> console.log(1),2000);
+ console.log(2);
+ setTimeout(()=> console.log(3),0);
+ console.log(4);
+})();
+
+First the 2 is printed with the console.log, then even with a time delay of 0ms, the 4 is
+printed before the 3 because JS executes setTimeout with the Web API, and so the entire function 
+is executed first. Lastly, after a delay of 2000ms, the 1 is printed.
+
+-->

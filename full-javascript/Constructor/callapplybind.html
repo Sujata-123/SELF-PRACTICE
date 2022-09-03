@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Apply Bind</title>
+  </head>
+  <body></body>
+  <script>
+    // All JavaScript functions has access to some very special methods which we
+    // can use to control where ‘this’ should refer.
+    // Such methods are call(), bind() & apply().
+
+    // Call() takes individual arguments separated by comma.
+
+    // the difference between call and apply is that in case of call
+    //we pass values by comma reperated but in case of apply we pass array, means
+    //comma seperated arrays.
+
+    // by seeing both functions we are having greet function which is common
+    // in both function
+    // suppose we have 10 constructor functions and we need same functionality
+    // so if we will same greet function again and again that is not good
+    // this because code duplication is not good.
+    // so see below what we are going to do, we will put out that function..
+
+    // function Student(firstName, lastName, subject) {
+    //   this.firstName = firstName;
+    //   this.lastName = lastName;
+    //   this.subject = subject;
+
+    //   this.greet = function () {
+    //     console.log(`${this.firstName} ${this.lastName}`);
+    //   };
+    // }
+
+    // let student = new Student("John", "Joe", "CS");
+    // student.greet();
+
+    // function Employee(firstName, lastName, department) {
+    //   this.firstName = firstName;
+    //   this.lastName = lastName;
+    //   this.department = department;
+
+    //   this.greet = function () {
+    //     console.log(`${this.firstName} ${this.lastName}`);
+    //   };
+    // }
+
+    // let employee = new Employee("Jason", "Smith");
+
+    const greet = function (prefix,sufix) {
+      // passing parameter
+      console.log(`${prefix} ${this.firstName} ${this.lastName} ${sufix}`);
+    };
+
+    // greet();
+    function Student(firstName, lastName, subject) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.subject = subject;
+    }
+
+    let student = new Student("John", "Joe", "CS");
+    //first parament is this value that is student and next is which we passed inside fun.
+    // we can pass comma seperated values as many as we want.
+    greet.call(student,"hii","How are you?"); // here we are telling javascript that call greet
+    // function for us but don't set this
+    //whatever value we will pass, point that value to this.
+
+    greet.apply(student,["hii","How are you?"])
+    function Employee(firstName, lastName, department) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.department = department;
+    }
+
+    let employee = new Employee("Jason", "Smith");
+
+    greet.call(employee,"Mr","How are you");
+
+
+
+    //bind kya karta hai wo new function deta hai or usko hum kabhi bhi use kar 
+    //sakte hai
+
+    let fn=greet.bind(student);
+    fn("A","B");
+  </script>
+</html>

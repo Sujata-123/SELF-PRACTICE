@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undefined And Not Defined</title>
+  </head>
+  <body>
+    <h4>Undefined and Not Defined</h4>
+  </body>
+  <script>
+    console.log(a); // this is the value (undefined) javascript engine
+    // alocated to "a" while creating the memory that's why we get undefined when
+    // doing console to a, before defined.
+    var a = 7;
+
+    var b;
+
+    if (b === undefined) {
+      console.log("b is undefined");
+    } else {
+      console.log("b is not defined");
+    }
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Functions</title>
+</head>
+<body>
+    <!-- 1. a callback function is a function that is passed into another 
+        function as an argument 
+    2. Javascript is synchronous and single-threaded language
+    3. asynchronous operations were like "setTimeout" not possible without this callback functions
+    4. we know that inside setTimeout(()=>{
+
+    },5000)      first argument is callback function and second is timer.
+    -->
+
+</body>
+<script>
+
+    setTimeout(()=>{
+console.log("will execute this console after 5 ms")
+    },5000)
+    function x(y){
+        console.log("x")
+        y();
+    }
+    x(function(y){
+        console.log("y");
+    })
+</script>
+</html>

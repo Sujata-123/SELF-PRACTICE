@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debouncing</title>
+  </head>
+  <body>
+    <button id="myId">Click Me</button>
+  </body>
+  <script>
+    // document.getElementById("myId").addEventListener("click",()=>{
+    //     console.log("clicked")
+    // })
+
+    // creating debounce function, and this functions would take two arguments
+    // the function that you want to execute, second would be the time how much time
+    // it would take to execute.
+    // debounce function would take two parameters and it would return HOF(higher order functions)
+    // delay is same delay which we passed inside inside clicked that is 2000.
+
+    document.getElementById("myId").addEventListener(
+      "click",
+      debounce((e) => {
+        console.log("clicked");
+      }, 2000)
+    );
+
+    function debounce(fn, delay) {
+      let timeOutId;
+      return function (...args) {
+        if (timeOutId) {
+          clearTimeout(timeOutId);
+        }
+        timeOutId = setTimeout(() => {
+          fn(...args);
+        }, delay);
+      };
+    }
+  </script>
+</html>
+
+<!-- I want on last click the event to be fired that's the right behaviour
+users can accendently click two times
+debouncing prevents excessive events firing.
+-->

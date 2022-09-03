@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First</title>
+  </head>
+  <body></body>
+  <script>
+    // let a=true;
+    // setTimeout(()=>{
+    //     a=false;
+    // },2000)
+    // while(a){
+    //     console.log("hello")
+    // }
+
+    // let a=true;
+    // let c=0;
+    // setTimeout(()=>{
+    //     a=false;
+    // },2000)
+
+    // while(a){
+    //     console.log(c++);
+    // }
+
+    // let a=true;
+    // let c=0;
+    // setTimeout(()=>{
+    //     a=false;
+    // },2000)
+
+    // setTimeout(()=>{
+    //     if(a){
+    //         console.log(c++);
+    //     }
+    // },200)
+
+    // var let const
+    // what is call scope
+    // 1. A scope is a region of program where a defined variable exists.
+    // 2. Types of scope
+    //   1. global scope
+    //   2. function scope
+    //   3. block scope
+    // function abc(){
+    //     //its scope is within this curly braces, this is function scope
+    // }
+
+    // {
+    //     //within this curly braces is block scope
+    // }
+
+    // var a=10;
+    // console.log(a);
+
+    // {
+    //     var b=30;
+    //     console.log(b);
+    // }
+    // console.log(b);
+
+    // {
+    //     let c=40;
+    //     console.log(c);
+    // }
+    // console.log(c);
+
+    // {
+    //     const d=50;
+    //     console.log("d hai ye",d);
+    // }
+    // console.log("d hai ye",d);
+
+    // function varFun(){
+    //     var a=90;
+    //     console.log("a hai ye",a);
+    // }
+    // varFun();
+    // console.log("a hai ye",a);
+
+    //point to remember
+    // 1. var is global scope
+    // 2. let and const is block scope.
+
+    // another concept which we can take out of this scoping which is call "shadowing"
+    // in javascript the introduction of let and const in es6 alone with block scope allows variable shadowing.
+
+    // so see below examples, as we know that we can not redeclare let and const with same name, but same name declaration
+    // posible with let and const, with different scope , and with nested scope.
+    // let ageFirst=20;
+    // function ageFirstFunc(){
+    //     let ageFirst=30;
+    //     console.log(ageFirst);
+    // }
+    // ageFirstFunc();
+
+    // const myAge=20;
+    // function ageFunc(){
+    //     const myAge=40;
+    //     console.log(myAge);
+    // }
+    // ageFunc();
+
+    //what is block in javascript
+    {
+      //block is defined by these curly braces
+      //block is also know as compound statement
+      // wrapping up group of multiple statements so that we can use it in a place where javascript expects one statement.
+    }
+
+    //what is block scope
+
+    {
+      //block scope means what all variables and functions we can access inside this block.
+      //   var a = 10;
+      //   let b = 20;
+      //   const c = 30;
+      //   console.log(a);
+      //   console.log(b);
+      //   console.log(c);
+      // }
+      // console.log(a);
+      // console.log(b);
+      // console.log(c);
+    }
+
+// var a=100;
+//     {
+//          // what is shadowing in javascript
+//       var a = 10;//because of shadowing concept, both are (means var a inside this block and var a outside this block) 
+//     //   refering to same memory space that is global space
+//       let b = 20;
+//       const c = 30;
+//       console.log(a);
+//       console.log(b);
+//       console.log(c);
+//     }
+//     console.log(a);
+
+
+// let b=100;
+//     {
+//       var a=10;
+//       let b = 20;
+//       const c = 30;
+//       console.log(a);
+//       console.log(b);
+//       console.log(c);
+//     }
+
+//     console.log(b);//its scope is outside of block and that is script.
+
+    // functions also works the same way.
+
+
+    // illegal shadowing
+// if we try to shadow var variable by let it will throw an error.
+    // let a=20;
+    // {
+    //     var a=30;
+    // }
+
+
+
+    function test(){
+        var a="hello";
+        // let b="Bye"
+
+        if(true){
+            let a="Hi";
+            // var b="GoodBye"
+            console.log(a);
+            // console.log(b);
+        }
+    }
+    test();
+  </script>
+</html>

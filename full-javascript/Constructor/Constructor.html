@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor</title>
+  </head>
+  <body>
+    <h1>Constructor</h1>
+  </body>
+  <script>
+    // How do we create objects in Javascript.
+    // var person={}   => object literal way.
+    // But, there is one problem with creating objects through previous methods.
+    // What if someone told you to create 100 objectss
+    // We need a better way to create multiple objects of same type!
+
+    // var person1 = {
+    //   name: "sujata",
+    //   age: 22,
+    // };
+    // var person2 = {
+    //   name: "singh",
+    //   age: 21,
+    // };
+    // var person3 = {
+    //   name: "sujata",
+    //   age: 22,
+    // };
+    // var person4 = {
+    //   name: "singh",
+    //   age: 21,
+    // };
+    // var person5 = {
+    //   name: "sujata",
+    //   age: 22,
+    // };
+    // var person6 = {
+    //   name: "singh",
+    //   age: 21,
+    // };
+    // var person7 = {
+    //   name: "sujata",
+    //   age: 22,
+    // };
+    // var person8 = {
+    //   name: "singh",
+    //   age: 21,
+    // };
+    // who is the owner of the key value pair
+    // var person = {
+    //   name: "sujata",
+    // }; //here person is the owner of key value pair.
+
+    // var person={
+    //     name:'Sujata',
+    //     myName:function(){
+    //         // how to get value john here.
+    //         console.log(person.name)
+    //     }
+    // }
+    // person.myName();
+    // The constructor method in JavaScript is a special function used to create objects.
+
+    // this refer to owner object so this==person.
+    var person = {
+      name: "sujata",
+      myName: function () {
+        console.log(person.name); // as we know that person is the owner of name
+        console.log(this.name); // and this is also owner of name
+        console.log(this);
+      },
+    };
+    person.myName();
+
+    // alone this refer to global object
+    // in function this refers to global object
+    // this helps use create objects using functions
+    // It is considered good practice to name constructor functions with an upper-case first letter.
+    // ‘this’ helps us create objects using functions.
+    function myName() {
+      console.log(this);
+    }
+    myName();
+
+    console.log(this);
+
+    // blueprint
+    function Player(n, t) {
+      this.name = n;
+      this.team = t;
+    }
+
+    // constructor executes automatically when object is created
+    var playerOne = new Player("Messi", "Barcelone"); //creating object
+    var playerTwo = new Player("Ronaldo", "Juventus");
+    console.log("playerone",playerOne)
+    console.log("playertwo",playerTwo)
+  </script>
+</html>

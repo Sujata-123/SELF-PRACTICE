@@ -1,0 +1,73 @@
+<!-- will apply debouncing concept here. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotstar</title>
+    <style>
+      input {
+        width: 200px;
+      }
+      #movies {
+        height: 200px;
+        width: 206px;
+        border-top: none;
+        border: 1px solid black;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <input oninput="searchMovies()" type="text" id="query" /> -->
+    <input oninput="debounce(displayMovies,1000)" type="text" id="query" />
+    <div id="movies"></div>
+  </body>
+  <script>
+    let movies_div = document.getElementById("movies");
+    let api_key = "7c3d6bd8";
+    let bomb;
+    async function searchMovies() {
+      try {
+        let name = document.getElementById("query").value;
+        let response = await fetch(
+          `https://omdbapi.com//?s=${name}&apikey=${api_key}`
+        );
+        let data = await response.json();
+        //   console.log("data:", data);
+        return data.Search;
+      } catch (err) {
+        console.log("error", err);
+      }
+    }
+
+    async function displayMovies() {
+      console.log("fired after 1 seconds");
+      movies_div.innerHTML = null;
+      let movie_data = await searchMovies();
+      //   console.log("movie_data", movie_data);
+      if (movie_data === undefined) {
+        return false;
+      }
+      console.log("movie_data", movie_data);
+      movie_data.forEach(function (movie) {
+        let p = document.createElement("p");
+        p.innerText = movie.Title;
+        movies_div.append(p);
+      });
+    }
+    // func<=>displayMovies
+    function debounce(func, delay) {
+        // by using debounce concepts it will make necessary calls not all api calls.
+        
+      clearInterval(bomb);
+      bomb = setTimeout(function () {
+        func();
+      }, delay);
+    }
+  </script>
+</html>
+
+<!-- https://omdbapi.com/   used this api -->
